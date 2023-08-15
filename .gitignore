@@ -1,0 +1,9 @@
+.venv
+.env
+*.db
+*.db-journal
+*.zip
+*.pth
+*.safetensors
+*.tsv
+*.csv
