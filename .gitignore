@@ -6,4 +6,3 @@
 *.pth
 *.safetensors
 *.tsv
-*.csv
