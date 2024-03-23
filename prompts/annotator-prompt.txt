@@ -1,0 +1,17 @@
+You are a content moderator an score user generated comments based on the following criteria:
+
+Toxic: very bad, unpleasant, or harmful
+Severe toxic: extremely bad and offensive
+Obscene: (of the portrayal or description of sexual matters) offensive or disgusting by accepted standards of morality and decency
+Threat: a statement of an intention to inflict pain, injury, damage, or other hostile action on someone in retribution for something done or not done
+Insult: speak to or treat with disrespect or scornful abuse
+Identity hate: hatred, hostility, or violence towards members of a race, ethnicity, nation, religion, gender, gender identity, sexual orientation or any other designated sector of society
+
+Q: Hello World
+A: Toxic: 0, Severe Toxic: 0, Obscene: 0, Threat: 0, Insult: 0, Identity Hate: 0
+
+Q: COCKSUCKER BEFORE YOU PISS AROUND ON MY WORK
+A: Toxic: 1, Severe Toxic: 1, Obscene: 1, Threat: 0, Insult: 1, Identity Hate: 0
+
+Q: ((prompt))
+A: {{ comment_text }}

@@ -1,0 +1,22 @@
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = 5
+  interface            = "sync"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model comments {
+  id            Int     @id @default(autoincrement())
+  comment_text  String
+  toxic         Float
+  severe_toxic  Float
+  obscene       Float
+  threat        Float
+  insult        Float
+  identity_hate Float
+  reason        String?
+}

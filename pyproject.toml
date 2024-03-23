@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "such-toxic"
+version = "0.1.0"
+description = ""
+authors = ["Nish Tahir <nishtahir@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nest-asyncio = "^1.6.0"
+openai = "^1.14.2"
+pandas = "^2.2.1"
+python-dotenv = "^1.0.1"
+safetensors = "^0.4.2"
+scikit-learn = "^1.4.1.post1"
+torch = "^2.2.1"
+tiktoken = "^0.6.0"
+sentence-transformers = "^2.5.1"
+transformers = "^4.38.2"
+setuptools = "^69.2.0"
+
+[tool.poetry.group.dev.dependencies]
+matplotlib = "^3.8.3"
+tqdm = "^4.66.2"
+psycopg2-binary = "^2.9.9"
+black = {extras = ["jupyter"], version = "^24.3.0"}
+mlflow = "^2.11.1"
+psutil = "^5.9.8"
+pynvml = "^11.5.0"
+isort = "^5.13.2"
+nbqa = "^1.8.4"
+ipykernel = "^6.29.3"
+ipywidgets = "^8.1.2"
+mypy = "^1.9.0"
+prisma = "^0.12.0"
+onnx = "^1.15.0"
+onnxruntime = "^1.17.1"
+pytest = "^8.1.1"
+
+[tool.mypy]
+python_version = "3.10"
+allow_redefinition = true
+check_untyped_defs = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+show_error_codes = true
+strict_optional = true
+no_implicit_optional = true
+warn_return_any = true
+warn_unused_configs = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
