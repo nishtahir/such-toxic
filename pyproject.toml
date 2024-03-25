@@ -8,16 +8,15 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 nest-asyncio = "^1.6.0"
-openai = "^1.14.2"
 pandas = "^2.2.1"
 python-dotenv = "^1.0.1"
 safetensors = "^0.4.2"
 scikit-learn = "^1.4.1.post1"
 torch = "^2.2.1"
-tiktoken = "^0.6.0"
 sentence-transformers = "^2.5.1"
 transformers = "^4.38.2"
 setuptools = "^69.2.0"
+sentencepiece = "^0.2.0"
 
 [tool.poetry.group.dev.dependencies]
 matplotlib = "^3.8.3"
