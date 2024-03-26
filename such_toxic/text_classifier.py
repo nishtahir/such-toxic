@@ -15,16 +15,19 @@ class TextClassifier(nn.Module):
     ):
         super(TextClassifier, self).__init__()
         self.embedding = AutoModel.from_pretrained(embedding_name)
+        for param in self.embedding.parameters():
+            param.requires_grad = False
+
         self.mean_pooler = MeanPooler()
         self.dropout = nn.Dropout(dropout)
         self.linear = nn.Linear(hidden_size, num_classes)
         self.sigmoid = nn.Sigmoid()
 
-    def forward(self, input_ids: Tensor, attn_mask: Tensor) -> Tensor:
-        embeddings = self.embedding(input_ids, attention_mask=attn_mask)
-        pooled = self.mean_pooler(embeddings[0], attn_mask)
+    def forward(self, input_ids: Tensor, attention_mask: Tensor) -> Tensor:
+        embeddings = self.embedding(input_ids=input_ids, attention_mask=attention_mask)
+        pooled = self.mean_pooler(embeddings[0], attention_mask)
         normalized = F.normalize(pooled, p=2, dim=1)
-        dropped = self.dropout(normalized)
-        logits = self.linear(dropped)
-        out: Tensor = self.sigmoid(logits)
+        logits = self.linear(normalized)
+        dropped = self.dropout(logits)
+        out: Tensor = self.sigmoid(dropped)
         return out
