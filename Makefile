@@ -1,14 +1,15 @@
 .PHONY: lint
 lint:
-	poetry run black --check .
-	poetry run isort -c .
+	poetry run ruff check .
+	poetry run ruff check --select I .
+	poetry run toml-sort --check pyproject.toml
 
 .PHONY: lint-fix
 lint-fix:
-	poetry run black .
-	poetry run isort .
-	poetry run nbqa isort .
-	prisma format
+	poetry run ruff check --select I --fix .
+	poetry run ruff format
+	poetry run prisma format
+	poetry run toml-sort -i pyproject.toml
 
 .PHONY: typecheck
 typecheck:
